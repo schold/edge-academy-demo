@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <title></title>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <button class="btn btn-default" data-bind="click: getMedals">Sochi 2014 medal count</button>
+    </div>
+
+    <div class="row">
+        <ul class="list-group" data-bind="foreach: medals()">
+            <li class="list-group-item">
+                <span data-bind="text: name"></span>
+                <span class="badge badge-bronze" data-bind="text: bronze"></span>
+                <span class="badge badge-silver" data-bind="text: silver"></span>
+                <span class="badge badge-gold" data-bind="text: gold"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min.js"></script>
+<script src="script.js"></script>
+</html>
