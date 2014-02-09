@@ -9,18 +9,29 @@
 <div class="container">
 
     <div class="row">
-        <button class="btn btn-default" data-bind="click: getMedals">Sochi 2014 medal count</button>
-    </div>
+        <div class="col-lg-6">
 
-    <div class="row">
-        <ul class="list-group" data-bind="foreach: medals()">
-            <li class="list-group-item">
-                <span data-bind="text: name"></span>
-                <span class="badge badge-bronze" data-bind="text: bronze"></span>
-                <span class="badge badge-silver" data-bind="text: silver"></span>
-                <span class="badge badge-gold" data-bind="text: gold"></span>
-            </li>
-        </ul>
+
+            <form role="form">
+                <button class="btn btn-default" data-bind="click: getMedals">Get Medals</button>
+
+                <div class="form-group">
+                    <label for="medalFilter">Filter results</label>
+                    <input data-bind="value: filter, valueUpdate: 'afterkeydown'" type="text" class="form-control" id="medalFilter" placeholder="Enter country name">
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-6">
+            <ul class="list-group" data-bind="foreach: medalsToShow()">
+                <li class="list-group-item">
+                    <span data-bind="text: name"></span>
+                    <span class="badge badge-bronze" data-bind="text: bronze"></span>
+                    <span class="badge badge-silver" data-bind="text: silver"></span>
+                    <span class="badge badge-gold" data-bind="text: gold"></span>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 </body>
@@ -28,5 +39,6 @@
 <script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min.js"></script>
+<script src="http://jashkenas.github.io/underscore/underscore-min.js"></script>
 <script src="script.js"></script>
 </html>
